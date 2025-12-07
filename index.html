@@ -47,6 +47,7 @@
             margin: 0 auto;
             padding: 15px 20px;
             display: flex;
+            /* Ensure space is distributed efficiently */
             justify-content: space-between;
             align-items: center;
         }
@@ -56,17 +57,34 @@
             color: var(--primary);
             font-weight: bold;
             text-decoration: none;
+            /* Prevent the logo from shrinking */
+            flex-shrink: 0; 
+        }
+
+        /* FIX 1 & 2: Constrain Search Bar and position button */
+        .header-content input[type="search"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            /* Constrain the search bar size and allow it to grow/shrink */
+            max-width: 400px;
+            width: 100%;
+            flex-grow: 1;
+            flex-shrink: 1; 
+            margin: 0 15px; /* Reduced margin */
         }
 
         .nav-cta {
             /* Primary CTA right */
             background: var(--accent);
             color: var(--white);
-            padding: 10px 20px;
+            padding: 10px 15px; /* Reduced padding slightly */
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
             white-space: nowrap;
+            /* Prevent the button from shrinking */
+            flex-shrink: 0; 
         }
 
         .container {
@@ -75,7 +93,7 @@
             padding: 20px;
         }
 
-        /* --- Hero Section (Fixed Structure/Copy from Audit) --- */
+        /* --- Hero Section --- */
 
         .hero {
             background: var(--primary); /* Deep Teal background */
@@ -85,23 +103,40 @@
         }
 
         .hero h1 {
-            /* H1: Get your local business found — fast. */
             margin: 0 0 15px;
-            font-size: 2.8rem; /* H1 ≈ 32–40px desktop */
+            font-size: 2.8rem;
             line-height: 1.1;
         }
 
         .hero p.subhead {
-            /* Sub: Listings, reviews and local SEO that brings customers through the door. */
             font-size: 1.3rem;
             max-width: 700px;
             margin: 10px auto 30px;
         }
 
+        .hero-ctas {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between buttons */
+        }
+        
         .hero-ctas .btn {
-            margin: 0 10px;
+            margin: 0; /* Remove individual button margins */
         }
 
+        /* FIX 3: Stack Hero CTAs on mobile */
+        @media (max-width: 550px) {
+            .hero-ctas {
+                flex-direction: column; /* Stack buttons vertically */
+                align-items: center;
+            }
+            .hero-ctas .btn {
+                width: 100%; /* Make stacked buttons full width */
+                max-width: 300px;
+                margin-bottom: 10px;
+            }
+        }
+        
         .btn {
             display: inline-block;
             padding: 14px 28px;
@@ -283,7 +318,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a> <header>
     <div class="header-content">
         <a href="/" class="logo">Local Search</a>
-        <input type="search" placeholder="Search services or location..." style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; max-width: 400px; flex-grow: 1; margin: 0 20px;">
+        <input type="search" placeholder="Search services or location...">
         <a href="#contact" class="nav-cta">Client Login</a> </div>
 </header>
 
@@ -315,8 +350,7 @@
         <div class="video-wrapper"> 
             <div class="video-content">
                 <video controls muted autoplay playsinline poster="media/v1-thumb.jpg"> 
-                    <source src="media/v1.mp4" type="video/mp4">
-                    <track label="English" kind="captions" srclang="en" src="media/v1-captions.vtt" default>
+                    <source src="vertical-video.mp4" type="video/mp4"> <track label="English" kind="captions" srclang="en" src="media/v1-captions.vtt" default>
                 </video>
             </div>
         </div>
