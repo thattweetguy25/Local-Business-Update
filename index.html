@@ -1,338 +1,279 @@
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Get Your Local Business Found — Free Local Audit | Local Search</title>
-    <meta name="description" content="Manage your listings, boost reviews, and get more calls from local customers. Get a free local SEO and marketing audit in 48 hours.">
-    <meta name="author" content="Local Search Team">
+<title>Local Business Visibility | LocalSearch</title>
+<meta name="description" content="LocalSearch helps Australian businesses improve local visibility, boost reviews, and get discovered faster. Claim your free local audit in 48 hours.">
 
-    <style>
-        :root {
-            --primary: #0B6E6E;
-            --accent: #F97316;
-            --light-bg: #F6F7F9;
-            --text-primary: #1F2937;
-            --white: #ffffff;
-            --max-width: 1150px;
-            --base-font: 16px;
-            --line-height: 1.5;
-        }
+<style>
+/* --------------------------------------------------------------
+   COLOURS
+-------------------------------------------------------------- */
+:root {
+    --primary: #2e6576;      /* teal background */
+    --cream: #fdfcf9;        /* body background */
+    --accent: #f96354;       /* CTA button */
+    --white: #ffffff;
+    --text-dark: #111111;
+    --max-width: 1200px;
+    --radius: 8px;
+}
 
-        /* Prevent horizontal scroll anywhere */
-        html, body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* FIX */
-        }
+/* --------------------------------------------------------------
+   RESET + BASE
+-------------------------------------------------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--cream);
+    colour: var(--text-dark);
+    line-height: 1.55;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; colour: inherit; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            font-size: var(--base-font);
-            background: var(--white);
-            color: var(--text-primary);
-            line-height: var(--line-height);
-        }
+/* --------------------------------------------------------------
+   HEADER
+-------------------------------------------------------------- */
+header {
+    background: var(--white);
+    padding: 12px 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.header-content {
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.header-content input[type="search"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #d3d3d3;
+    border-radius: var(--radius);
+    min-width: 0;
+}
+.header-btn {
+    background: var(--accent);
+    colour: var(--white);
+    padding: 12px 18px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    white-space: nowrap;
+}
 
-        /* Header */
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+/* Hide search bar on tiny screens */
+@media (max-width: 500px) {
+    .header-content input[type="search"] { display: none; }
+}
 
-        .header-content {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 10px 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px; /* FIX for tight layouts */
-        }
+/* --------------------------------------------------------------
+   HERO
+-------------------------------------------------------------- */
+.hero {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 85px 20px 70px;
+}
+.hero h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+.hero p {
+    font-size: 1.15rem;
+    max-width: 680px;
+    margin: auto;
+    opacity: .95;
+}
+.hero-ctas {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+.btn {
+    padding: 14px 34px;
+    border-radius: var(--radius);
+    font-weight: 700;
+    text-align: center;
+    max-width: 340px;
+    width: 100%;
+}
+.btn-primary {
+    background: var(--accent);
+    colour: var(--white);
+}
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--white);
+    colour: var(--white);
+}
 
-        .logo {
-            font-size: 1.5rem;
-            color: var(--primary);
-            font-weight: bold;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
+/* --------------------------------------------------------------
+   FEATURES
+-------------------------------------------------------------- */
+.features {
+    max-width: var(--max-width);
+    margin: 60px auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 28px;
+}
+.feature-box {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.feature-box h3 {
+    margin-bottom: 8px;
+    colour: var(--primary);
+}
 
-        .header-content input[type="search"] {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-            max-width: 400px;
-            flex-grow: 1;
-        }
+/* --------------------------------------------------------------
+   VIDEO SECTION
+-------------------------------------------------------------- */
+.video-section {
+    max-width: 900px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+.video-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.video-wrap {
+    position: relative;
+    width: 100%;
+}
+.video-wrap::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /* 16:9 */
+}
+.video-content {
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+}
+@media (max-width:600px) {
+    .video-wrap::before {
+        padding-top: 177.78%; /* 9:16 */
+    }
+}
 
-        .nav-cta {
-            background: var(--accent);
-            color: var(--white);
-            padding: 10px 14px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-decoration: none;
-            white-space: nowrap;
-        }
+/* --------------------------------------------------------------
+   FOOTER
+-------------------------------------------------------------- */
+footer {
+    background: var(--primary);
+    padding: 40px 20px;
+    text-align: center;
+    colour: var(--white);
+    margin-top: 60px;
+    font-size: .9rem;
+    opacity: .9;
+}
 
-        /* Hide search on mobile */
-        @media (max-width: 600px) {
-            .header-content input[type="search"] {
-                display: none;
-            }
-        }
+/* --------------------------------------------------------------
+   FOCUS STATES (WCAG)
+-------------------------------------------------------------- */
+a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
 
-        /* Containers */
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 20px 16px; /* FIX: mobile spacing */
-        }
+/* --------------------------------------------------------------
+   SKIP LINK
+-------------------------------------------------------------- */
+.skip-link {
+    position: absolute;
+    top:-999px; left:10px;
+    background: var(--white);
+    padding: 10px;
+    z-index: 2000;
+}
+.skip-link:focus { top:10px; }
 
-        /* HERO */
-        .hero {
-            background: var(--primary);
-            padding: 70px 20px;
-            text-align: center;
-            color: var(--white);
-        }
+</style>
 
-        .hero h1 {
-            font-size: clamp(1.8rem, 5vw, 2.8rem); /* FIX: scalable heading */
-            margin-bottom: 15px;
-            line-height: 1.15;
-        }
+<!-- STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "LocalSearch Business",
+  "url": "https://weetguy25.github.io",
+  "description": "Local visibility and review management for Australian businesses.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AU"
+  }
+}
+</script>
 
-        .hero p.subhead {
-            font-size: clamp(1rem, 3.5vw, 1.3rem);
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;  /* FIX: allow wrapping */
-        }
-
-        @media (max-width: 550px) {
-            .hero-ctas {
-                flex-direction: column;
-                width: 100%;
-            }
-            .hero-ctas .btn {
-                width: 100%;
-                max-width: 320px;
-            }
-        }
-
-        /* BUTTONS */
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .btn.primary {
-            background: var(--accent);
-            color: var(--white);
-        }
-
-        .btn.secondary {
-            border: 2px solid var(--white);
-            color: var(--white);
-            background: transparent;
-        }
-
-        /* Sections */
-        .section {
-            padding: 60px 20px;
-        }
-
-        .section.light {
-            background: var(--light-bg);
-        }
-
-        .section h2 {
-            text-align: center;
-            font-size: clamp(1.6rem, 4vw, 2.2rem); /* FIX scaling */
-            color: var(--primary);
-            margin-bottom: 25px;
-        }
-
-        /* Cards */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* FIX */
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 22px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        /* VIDEO FIX — Fully responsive */
-        .video-wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .video-wrapper::before {
-            content: "";
-            display: block;
-            padding-top: 56.25%;
-        }
-
-        .video-content {
-            position: absolute;
-            inset: 0;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .video-content video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        @media (max-width: 600px) {
-            .video-wrapper {
-                max-width: 100%; /* FIX */
-            }
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            padding: 40px 20px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); /* FIX */
-            gap: 25px;
-            max-width: var(--max-width);
-            margin: 0 auto 30px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.15);
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-    </style>
 </head>
 
 <body>
 
-<!-- ACCESSIBILITY -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header>
     <div class="header-content">
-        <a href="/" class="logo">Local Search</a>
-        <input type="search" placeholder="Search services or location...">
-        <a href="#contact" class="nav-cta">Client Login</a>
+        <input type="search" placeholder="Search services or location…">
+        <a href="#" class="header-btn">Client Login</a>
     </div>
 </header>
 
-<main id="main-content">
+<main id="main">
 
 <section class="hero">
-    <div class="container">
-        <h1>Local customers find local businesses — quickly.</h1>
-        <p class="subhead">Manage your listings, boost reviews and get more calls. Free audit in 48 hours.</p>
-        
-        <div class="hero-ctas">
-            <a href="#contact" class="btn primary">Get a Free Local Audit</a>
-            <a href="#pricing" class="btn secondary">See Plans</a>
-        </div>
+    <h1>Local customers find local businesses — quickly.</h1>
+    <p>Manage your listings, boost reviews and get more calls. Free audit in 48 hours.</p>
 
-        <div class="trust-badges" style="margin-top:20px; font-size:0.9rem; opacity:0.9;">
-            Trusted by 700+ Australian businesses • ★★★★★ 4.8/5.0
-        </div>
+    <div class="hero-ctas">
+        <a href="#" class="btn btn-primary">Get a Free Local Audit</a>
+        <a href="#" class="btn btn-secondary">See Plans</a>
     </div>
 </section>
 
-<section class="section">
-    <div class="container" style="text-align:center;">
-        <h2>Find Local Services Instantly</h2>
-        <p>Interactive search, map and filters will go here.</p>
+<section class="features">
+    <div class="feature-box">
+        <h3>Stronger Local Reach</h3>
+        <p>Optimise your listing so nearby customers find you at the exact moment they search.</p>
+    </div>
+    <div class="feature-box">
+        <h3>Review Growth</h3>
+        <p>Showcase trustworthy feedback to build credibility and attract more enquiries.</p>
+    </div>
+    <div class="feature-box">
+        <h3>Accurate Business Info</h3>
+        <p>We ensure your listing stays updated, correct and consistent across the web.</p>
     </div>
 </section>
 
-<section class="section light">
-    <div class="container">
-        <h2>Watch: How LocalSearch Drives Customers</h2>
-
-        <div class="video-wrapper">
-            <div class="video-content">
-                <video controls muted autoplay playsinline poster="media/v1-thumb.jpg">
-                    <source src="vertical-video.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <h2>Real Results for Real Businesses</h2>
-
-        <div class="card-grid">
-            <div class="card"><h3>Case Study</h3><p>307+ leads in 30 days.</p></div>
-            <div class="card"><h3>Testimonial</h3><p>Named testimonials with stars.</p></div>
-            <div class="card"><h3>Expertise</h3><p>Author credibility cards.</p></div>
-        </div>
-
-        <div style="text-align:center; margin-top:40px;">
-            <a href="#case-studies" class="btn primary">Read More Case Studies</a>
-        </div>
-    </div>
-</section>
-
-<section class="section light" id="contact">
-    <div class="container">
-        <h2>Speak with the Team</h2>
-        <p style="text-align:center; max-width:600px; margin:0 auto;">Share your goals and we’ll help you get started.</p>
-        <div style="text-align:center; margin-top:20px;">
-            <a href="mailto:hello@localsearch.com.au" class="btn primary">Contact Us for a Free Audit</a>
-        </div>
+<section class="video-section">
+    <h2>How It Works</h2>
+    <div class="video-wrap">
+        <video class="video-content" controls preload="none">
+            <source src="your-video.mp4" type="video/mp4">
+        </video>
     </div>
 </section>
 
 </main>
 
 <footer>
-    <div class="footer-grid">
-        <div><h4>About</h4></div>
-        <div><h4>Services</h4></div>
-        <div><h4>Policies</h4></div>
-    </div>
-    <div class="footer-bottom">
-        &copy; Local Search Australia
-    </div>
+    LocalSearch Business © 2025
 </footer>
 
 </body>
