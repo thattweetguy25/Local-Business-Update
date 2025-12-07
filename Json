@@ -1,0 +1,25 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "LocalSearch Australia",
+  "url": "https://business.localsearch.com.au/",
+  "logo": "https://business.localsearch.com.au/assets/logo.png",
+  "sameAs": ["https://www.facebook.com/localsearch", "https://www.linkedin.com/company/localsearch"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Level 1, Example St",
+    "addressLocality": "Brisbane",
+    "addressRegion": "QLD",
+    "postalCode": "4000",
+    "addressCountry": "AU"
+  },
+  "telephone": "+61-7-1234-5678",
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "842"
+  }
+}
+</script>
