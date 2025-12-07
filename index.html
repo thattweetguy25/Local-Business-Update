@@ -1,308 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LocalSearch – Smarter Local Marketing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LocalSearch — Lead-Generating Digital Marketing for Australian Businesses</title>
+  <meta name="description" content="LocalSearch delivers lead-generating websites, SEO, ads and local listings for Australian businesses. Get visible, trusted and ready — get a free audit today.">
 
-<style>
-/* -----------------------------------
-   COLOUR SYSTEM
------------------------------------ */
-:root {
-    --blue: #2e6576;
-    --cream: #fdfcf9;
-    --orange: #f96354;
-    --white: #ffffff;
-    --black: #111111;
-}
-
-/* -----------------------------------
-   BASE
------------------------------------ */
-body {
-    margin: 0;
-    font-family: "Inter", Arial, sans-serif;
-    background: var(--cream);
-    color: var(--black);
-    line-height: 1.6;
-}
-
-/* -----------------------------------
-   HEADER (Updated)
------------------------------------ */
-header {
-    background: var(--cream);
-    padding: 18px 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: var(--blue);
-    letter-spacing: -0.5px;
-    white-space: nowrap;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-}
-
-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--blue);
-    font-size: 1rem;
-}
-
-.btn-orange {
-    background: var(--orange);
-    color: var(--white);
-    padding: 12px 28px;
-    border-radius: 40px;
-    font-weight: 700;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--blue);
-}
-
-@media (max-width: 860px) {
-    nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 65px;
-        right: 0;
-        width: 100%;
-        background: var(--cream);
-        border-bottom: 1px solid #ddd;
-        padding: 20px 0;
+  <style>
+    /* Colour & Typography */
+    :root {
+      --blue: #2e6576;
+      --cream: #fdfcf9;
+      --orange: #f96354;
+      --white: #ffffff;
+      --black: #111111;
+      --radius: 8px;
+      --max-width: 1150px;
     }
-    nav.open {
-        display: flex;
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--cream);
+      color: var(--black);
+      font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
     }
-    nav a {
-        padding: 12px 20px;
-        width: 100%;
-        text-align: center;
-        font-size: 1.1rem;
+    a { text-decoration: none; colour: inherit; }
+    header { background: var(--cream); padding: 18px 22px; position: sticky; top:0; z-index:1000; border-bottom: 1px solid #ddd; }
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .menu-toggle {
-        display: block;
-    }
+    .logo { font-size: 1.9rem; font-weight: 700; color: var(--blue); }
+    nav { display: flex; align-items: center; gap: 26px; }
+    nav a { font-size: 1rem; font-weight: 600; color: var(--blue); }
     .btn-orange {
-        margin-top: 12px;
+      background: var(--orange);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      white-space: nowrap;
     }
-}
 
-/* -----------------------------------
-   HERO
------------------------------------ */
-.hero {
-    background: var(--blue);
-    color: var(--white);
-    text-align: center;
-    padding: 120px 20px 140px;
-}
+    /* Hero */
+    .hero {
+      background: var(--blue);
+      colour: var(--white);
+      text-align: center;
+      padding: 100px 20px 120px;
+      colour: var(--white);
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 720px;
+      margin: 0 auto 40px;
+      colour: var(--white);
+      opacity: 0.95;
+    }
+    .hero .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+    }
+    .btn-outline-white {
+      padding: 12px 28px;
+      border: 2px solid var(--white);
+      border-radius: var(--radius);
+      colour: var(--white);
+      font-weight: 600;
+      white-space: nowrap;
+    }
 
-.hero h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
+    /* Services / Benefits */
+    .section {
+      padding: 80px 20px;
+    }
+    .section .inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: var(--blue);
+      text-align: center;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+    .service {
+      background: var(--white);
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid #e6e6e6;
+      transition: border 0.2s;
+    }
+    .service h3 {
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: 1.3rem;
+    }
+    .service p {
+      font-size: 1rem;
+      colour: var(--black);
+    }
 
-.hero p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-}
+    /* Video block */
+    .video-block {
+      background: var(--cream);
+      padding: 70px 20px;
+      text-align: center;
+    }
+    .video-block h2 {
+      color: var(--blue);
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    .video-container {
+      max-width: 420px;
+      margin: 0 auto;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+    /* Footer */
+    footer {
+      background: var(--blue);
+      colour: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+      colour: var(--white);
+    }
+    footer a { colour: var(--white); text-decoration: underline; }
 
-.btn-outline {
-    border: 2px solid var(--white);
-    padding: 12px 28px;
-    border-radius: 40px;
-    font-weight: 700;
-    color: var(--white);
-    text-decoration: none;
-}
-
-/* -----------------------------------
-   VIDEO BLOCK (16:9 VERTICAL)
------------------------------------ */
-.video-section {
-    background: var(--cream);
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.video-section h2 {
-    color: var(--blue);
-    margin-bottom: 30px;
-    font-size: 2.2rem;
-    font-weight: 700;
-}
-
-.video-wrapper {
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
-    aspect-ratio: 9 / 16;
-    background: #ddd;
-    border-radius: 18px;
-    overflow: hidden;
-}
-
-/* -----------------------------------
-   FEATURES
------------------------------------ */
-.features {
-    padding: 80px 20px;
-    background: var(--cream);
-    text-align: center;
-}
-
-.features h2 {
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    color: var(--blue);
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.feature-box {
-    background: var(--white);
-    border-radius: 14px;
-    padding: 28px;
-    text-align: left;
-    border: 1px solid #e6e6e6;
-}
-
-.feature-box h3 {
-    color: var(--blue);
-    margin-bottom: 12px;
-}
-
-.feature-box p {
-    color: var(--black);
-}
-
-/* -----------------------------------
-   FOOTER
------------------------------------ */
-footer {
-    padding: 60px 20px;
-    background: var(--blue);
-    color: var(--white);
-    text-align: center;
-}
-
-footer a {
-    color: var(--white);
-    text-decoration: underline;
-}
-</style>
+    /* Responsive tweaks */
+    @media (max-width:800px) {
+      .hero h1 { font-size: 2.4rem; }
+      .hero p { font-size: 1.1rem; }
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
+  <div class="header-inner">
     <div class="logo">LocalSearch</div>
-
-    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('open')">
-        ☰
-    </button>
-
     <nav>
-        <a href="#">Services</a>
-        <a href="#">Pricing</a>
-        <a href="#">Support</a>
-        <a href="#" class="btn-orange">Get Started</a>
+      <a href="#services">What We Do</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="btn-orange">Get Started</a>
     </nav>
+  </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Grow Your Local Business with Confidence</h1>
-    <p>Simple, effective tools that help customers find you, trust you, and choose you.</p>
-
-    <div class="hero-buttons">
-        <a class="btn-orange" href="#">Get Free Local Audit</a>
-        <a class="btn-outline" href="#">See Plans</a>
+<main>
+  <section class="hero">
+    <h1>Digital marketing that generates local leads — not just clicks</h1>
+    <p>We deliver custom websites, SEO, ads and review-boosting tools designed for Australian local businesses targeting real results — leads, calls and customers.</p>
+    <div class="cta-group">
+      <a href="#contact" class="btn-orange">Get a Free Local Audit</a>
+      <a href="#services" class="btn-outline-white">See Plans</a>
     </div>
-</section>
+  </section>
 
-<!-- VIDEO -->
-<section class="video-section">
-    <h2>See How LocalSearch Works</h2>
-
-    <div class="video-wrapper">
-        <!-- Drop your 9:16 video embed or MP4 here -->
-        <!-- Example placeholder -->
-        <video controls style="width:100%;height:100%;object-fit:cover;">
-            <source src="yourvideo.mp4" type="video/mp4">
-        </video>
+  <section id="services" class="section">
+    <div class="inner">
+      <h2>What We Offer</h2>
+      <div class="services-grid">
+        <div class="service">
+          <h3>Listings & Reputation Management</h3>
+          <p>Ensure your business shows up accurately across directories, Google Maps and review platforms — building trust before customers call.</p>
+        </div>
+        <div class="service">
+          <h3>SEO & Local Search Optimisation</h3>
+          <p>Rank higher for local queries, outrank competitors and capture ready-to-buy customers searching near you.</p>
+        </div>
+        <div class="service">
+          <h3>Website Design & Performance</h3>
+          <p>Fast, responsive and conversion-optimised websites that turn visitors into enquiries — built with WCAG accessibility in mind.</p>
+        </div>
+        <div class="service">
+          <h3>Digital Advertising & Lead Generation</h3>
+          <p>Targeted ads on Google and social channels — reach customers nearby when they search or browse online.</p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- FEATURES -->
-<section class="features">
-    <h2>Everything You Need to Be Found Online</h2>
-
-    <div class="feature-grid">
-        <div class="feature-box">
-            <h3>Accurate Listings</h3>
-            <p>Keep your name, phone and opening hours correct across the platforms your customers use.</p>
-        </div>
-
-        <div class="feature-box">
-            <h3>Website Optimisation</h3>
-            <p>Fast, mobile-friendly, SEO-aligned sites designed to convert real visitors.</p>
-        </div>
-
-        <div class="feature-box">
-            <h3>Reputation Management</h3>
-            <p>Collect better reviews, respond quickly, and build trust in your community.</p>
-        </div>
-
-        <div class="feature-box">
-            <h3>Customer Insights</h3>
-            <p>Clear reporting helps you understand what people search for and where they find you.</p>
-        </div>
+  <section class="video-block">
+    <h2>See How It Works</h2>
+    <div class="video-container">
+      <!-- Insert 9:16 or 16:9 video here -->
+      <video controls muted playsinline poster="media/preview.jpg">
+        <source src="media/overview.mp4" type="video/mp4">
+      </video>
     </div>
-</section>
+  </section>
+
+  <section class="section">
+    <div class="inner">
+      <h2>Ready to Grow? Let’s Talk</h2>
+      <p style="text-align:center; max-width:600px; margin: 0 auto 30px;">Book a no-obligation audit and see exactly where your business stands online — and how we can elevate your digital presence.</p>
+      <div style="text-align:center">
+        <a href="mailto:hello@localsearch.com.au" class="btn-orange">Request My Free Audit</a>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-    <p>© 2025 LocalSearch. Need help? <a href="#">Contact Support</a></p>
+  <p>&copy; LocalSearch 2025 — Empowering local businesses across Australia.</p>
 </footer>
 
 </body>
