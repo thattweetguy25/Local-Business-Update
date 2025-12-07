@@ -1,372 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LocalSearch for Australian Businesses | Websites, SEO & Ads</title>
+<title>LocalSearch Business | Websites, SEO & Digital Growth</title>
 
+<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+/* --------------------------------------------------------------
+   COLOURS
+-------------------------------------------------------------- */
 :root {
-    --blue: #3d70fe;
-    --cream: #fdfcf9;
-    --orange: #fc7201;
+    --teal: #3d70fe;        /* solid colour areas */
+    --cream: #fdfcf9;       /* light background */
+    --orange: #fc7201;      /* CTA button */
     --white: #ffffff;
-    --text-dark: #222;
+    --black: #111;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
+/* --------------------------------------------------------------
+   BASE
+-------------------------------------------------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
+    font-family: 'Montserrat', sans-serif;
     background: var(--cream);
-    color: var(--text-dark);
+    color: var(--black);
+    line-height: 1.6;
 }
+img, iframe { max-width: 100%; }
 
-/* ---------------- HEADER ---------------- */
-
+/* --------------------------------------------------------------
+   HEADER
+-------------------------------------------------------------- */
 header {
     background: var(--cream);
+    border-bottom: 1px solid #ddd;
     padding: 18px 22px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 .logo {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     font-weight: 800;
-    color: var(--blue);
-    letter-spacing: -0.5px;
+    color: var(--teal);
+    white-space: nowrap;
 }
 
+/* NAV */
 nav {
     display: flex;
-    align-items: center;
     gap: 26px;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--blue);
     font-weight: 600;
-    font-size: 1rem;
+    color: var(--teal);
 }
 
-.burger {
+/* MOBILE MENU */
+.menu-btn {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
+    background: none;
+    border: none;
+    font-size: 1.9rem;
+    color: var(--teal);
 }
 
-.burger div {
-    width: 28px;
-    height: 3px;
-    background: var(--blue);
+@media (max-width: 850px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--cream);
+        padding: 20px 0;
+        flex-direction: column;
+        gap: 18px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
 }
 
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: var(--cream);
-    width: 100%;
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.mobile-menu a {
-    margin-bottom: 12px;
-    color: var(--blue);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.btn {
+/* --------------------------------------------------------------
+   BUTTONS
+-------------------------------------------------------------- */
+.btn-orange {
     background: var(--orange);
+    colour: var(--white);
     color: var(--white);
     padding: 14px 34px;
     border-radius: 40px;
+    border: 1px solid var(--white);
     font-weight: 700;
     text-decoration: none;
-    border: 2px solid var(--white);
     display: inline-block;
+    text-align: centre;
     text-align: center;
+    transition: 0.2s;
+}
+.btn-orange:hover {
+    opacity: 0.9;
 }
 
-/* ---------------- HERO ---------------- */
-
+/* --------------------------------------------------------------
+   HERO
+-------------------------------------------------------------- */
 .hero {
-    background: var(--blue);
-    color: var(--white);
-    padding: 120px 20px 80px;
+    background: var(--teal);
+    padding: 90px 20px 110px;
     text-align: center;
+    colour: var(--white);
+    color: var(--white);
 }
 
 .hero h1 {
-    font-size: 2.8rem;
+    font-size: 2.7rem;
     font-weight: 800;
-    line-height: 1.2;
-    max-width: 780px;
-    margin: 0 auto 20px;
+    margin-bottom: 18px;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    max-width: 650px;
-    margin: 0 auto 28px;
-    line-height: 1.6;
-    color: var(--white);
+    font-size: 1.25rem;
+    max-width: 780px;
+    margin: 0 auto 35px;
 }
 
-/* Video container: 19:6 ratio */
-.video-wrapper {
+/* --------------------------------------------------------------
+   VERTICAL 19:6 VIDEO
+-------------------------------------------------------------- */
+.video-section {
+    padding: 70px 20px;
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+}
+
+.vertical-video-wrap {
     position: relative;
     width: 100%;
-    max-width: 1100px;
-    margin: 50px auto 0;
-    padding-bottom: calc(100% * 6 / 19); /* 19:6 ratio */
-    background: rgba(255,255,255,0.15);
+    margin: 40px auto;
     border-radius: 14px;
     overflow: hidden;
+    background: #000;
 }
 
-.video-wrapper iframe,
-.video-wrapper .placeholder {
+/* 19:6 = 316% height ratio */
+.vertical-video-wrap::before {
+    content: "";
+    display: block;
+    padding-top: 316%;
+}
+
+.vertical-video {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
 
-.placeholder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    font-size: 1.4rem;
-    font-weight: 600;
-    background: rgba(255,255,255,0.1);
-}
-
-/* ---------------- SERVICES ---------------- */
-
-.section {
-    padding: 90px 24px;
-    text-align: center;
-}
-
-.section h2 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 14px;
-}
-
-.section p {
-    max-width: 720px;
-    margin: 0 auto 38px;
-    line-height: 1.7;
-}
-
-.grid {
+/* --------------------------------------------------------------
+   FEATURES
+-------------------------------------------------------------- */
+.features {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 20px;
     display: grid;
     gap: 28px;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-.card {
+.feature-box {
     background: var(--white);
-    padding: 36px 32px;
-    border-radius: 12px;
-    box-shadow: 0 4px 22px rgba(0,0,0,0.08);
-    text-align: left;
+    padding: 26px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
 }
 
-.card h3 {
+.feature-box h3 {
     font-size: 1.4rem;
     margin-bottom: 10px;
-    font-weight: 700;
 }
 
-/* ---------------- PLANS ---------------- */
-
-.plans {
-    background: var(--blue);
-    padding: 100px 20px;
-    text-align: center;
-    color: var(--white);
-}
-
-.plans h2 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-.plans p {
-    max-width: 720px;
-    margin: 0 auto 40px;
-    font-size: 1.1rem;
-}
-
-.plan-grid {
-    display: grid;
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-}
-
-.plan {
-    background: rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 36px;
-    text-align: left;
-}
-
-.plan h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--white);
-}
-
-.plan span {
-    font-size: 2.1rem;
-    font-weight: 800;
-    display: block;
-    margin-bottom: 18px;
-}
-
-/* ---------------- FOOTER ---------------- */
-
+/* --------------------------------------------------------------
+   FOOTER
+-------------------------------------------------------------- */
 footer {
-    background: var(--blue);
+    background: var(--teal);
+    colour: var(--white);
     color: var(--white);
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 40px;
-    font-size: 0.95rem;
+    padding: 70px 20px;
 }
 
-/* ---------------- RESPONSIVE ---------------- */
+.footer-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    gap: 40px;
+}
 
-@media(max-width: 860px) {
-    nav { display: none; }
-    .burger { display: flex; }
+.footer-col h4 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.footer-col a, .footer-col p {
+    display: block;
+    colour: var(--white);
+    color: var(--white);
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+footer .copyright {
+    text-align: center;
+    margin-top: 40px;
+    opacity: 0.9;
 }
 </style>
-
-<script>
-function toggleMenu() {
-    const menu = document.querySelector('.mobile-menu');
-    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-}
-</script>
 
 </head>
 <body>
 
 <header>
-    <div class="logo">LocalSearch</div>
+    <div class="header-inner">
+        <div class="logo">LocalSearch</div>
 
-    <nav>
-        <a href="#">Services</a>
-        <a href="#">Websites</a>
-        <a href="#">SEO</a>
-        <a href="#">Ads</a>
-        <a href="#">Support</a>
-        <a class="btn" href="#">Get Started</a>
-    </nav>
+        <button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('open')">
+            ☰
+        </button>
 
-    <div class="burger" onclick="toggleMenu()">
-        <div></div><div></div><div></div>
+        <nav>
+            <a href="#">Services</a>
+            <a href="#">Pricing</a>
+            <a href="#">Support</a>
+            <a href="#">Resources</a>
+        </nav>
     </div>
 </header>
 
-<div class="mobile-menu">
-    <a href="#">Services</a>
-    <a href="#">Websites</a>
-    <a href="#">SEO</a>
-    <a href="#">Ads</a>
-    <a href="#">Support</a>
-    <a class="btn" href="#">Get Started</a>
-</div>
-
 <!-- HERO -->
 <section class="hero">
-    <h1>Websites, SEO and Ads That Help Australian Local Businesses Grow</h1>
-    <p>We deliver custom websites, SEO, ads and review-boosting tools designed for Australian local businesses targeting real results — leads, calls and customers.</p>
+    <h1>Digital growth designed for local Australian businesses</h1>
 
-    <a href="#" class="btn" style="margin-top: 10px;">Get Started</a>
+    <p>
+        We deliver custom websites, SEO, ads and review-boosting tools designed for Australian local
+        businesses targeting real results — leads, calls and customers.
+    </p>
 
-    <div class="video-wrapper">
-        <div class="placeholder">19:6 Video Placeholder</div>
+    <a href="#" class="btn-orange">Get Started</a>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+    <h2 style="font-size:1.9rem; font-weight:700;">How LocalSearch Helps Your Business Grow</h2>
+
+    <div class="vertical-video-wrap">
+        <iframe class="vertical-video"
+            src="https://www.youtube.com/embed/tad6aA8ULA0"
+            frameborder="0"
+            allowfullscreen
+            title="LocalSearch YouTube Short">
+        </iframe>
     </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section">
-    <h2>Everything You Need to Be Found Online</h2>
-    <p>LocalSearch gives small and regional businesses access to high-performing digital tools normally reserved for big brands. Clear pricing. No jargon. Just results.</p>
+<!-- FEATURES -->
+<section class="features">
+    <div class="feature-box">
+        <h3>Local SEO</h3>
+        <p>Improve visibility where people search most — Google Maps and organic search results.</p>
+    </div>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Custom Websites</h3>
-            <p>Fast, secure sites designed to convert visitors into customers.</p>
-        </div>
-        <div class="card">
-            <h3>Local SEO</h3>
-            <p>Get discovered by nearby customers searching for your services.</p>
-        </div>
-        <div class="card">
-            <h3>Digital Advertising</h3>
-            <p>Google and social ads that deliver predictable, cost-efficient leads.</p>
-        </div>
-        <div class="card">
-            <h3>Reviews & Reputation</h3>
-            <p>Tools that grow social proof and build trust naturally.</p>
-        </div>
+    <div class="feature-box">
+        <h3>Custom Websites</h3>
+        <p>Fast, secure and built for conversions with modern UX and mobile-first performance.</p>
+    </div>
+
+    <div class="feature-box">
+        <h3>Reputation & Reviews</h3>
+        <p>Strengthen trust with tools that increase genuine customer reviews and manage feedback.</p>
     </div>
 </section>
 
-<!-- PLANS -->
-<section class="plans">
-    <h2>Plans for Every Local Business</h2>
-    <p>Choose the right level for your growth and scale as your business evolves.</p>
-
-    <div class="plan-grid">
-        <div class="plan">
-            <h3>Starter Website</h3>
-            <span>$89/mo</span>
-            <p>A clean, reliable site that gives your business a strong online presence.</p>
-        </div>
-
-        <div class="plan">
-            <h3>Growth SEO</h3>
-            <span>$299/mo</span>
-            <p>Higher rankings, more visibility, and stronger local reach.</p>
-        </div>
-
-        <div class="plan">
-            <h3>Digital Ads Pack</h3>
-            <span>$399/mo</span>
-            <p>Google & Meta ads crafted for high-quality lead generation.</p>
-        </div>
-    </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
-    © LocalSearch 2025 — Empowering local businesses across Australia.
+
+    <div class="footer-grid">
+
+        <div class="footer-col">
+            <h4>Our digital marketing generates leads for your local business</h4>
+            <a href="#">Talk to a Specialist</a>
+            <a href="#">Add a Business</a>
+            <p>1300 753 650</p>
+            <p>enquiries@localsearch.com.au</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <a href="#">X</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+            <a href="#">YouTube</a>
+            <a href="#">www.localsearch.com.au</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Success Stories</a>
+            <a href="#">Careers</a>
+            <a href="#">Localsearch in the Media</a>
+            <a href="#">Our Locations</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="#">FAQs</a>
+            <a href="#">Knowledge Base</a>
+            <a href="#">Blog</a>
+            <a href="#">Widget Centre</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>What We Do</h4>
+            <a href="#">Websites</a>
+            <a href="#">Google Ads</a>
+            <a href="#">Performance Boost</a>
+            <a href="#">Listings Management</a>
+            <a href="#">Reputation Management</a>
+            <a href="#">Online Reviews</a>
+            <a href="#">SEO</a>
+            <a href="#">Digital Presence</a>
+            <a href="#">Google Business Profile</a>
+            <a href="#">Advertising</a>
+        </div>
+    </div>
+
+    <p class="copyright">
+        © LocalSearch 2025 — Empowering local businesses across Australia.
+    </p>
 </footer>
+
+<script>
+/* no JS needed except menu toggle */
+</script>
 
 </body>
 </html>
