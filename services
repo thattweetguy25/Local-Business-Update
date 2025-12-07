@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LocalSearch Services — Websites, SEO, Google Ads & Reputation Tools for Australian Businesses</title>
+<meta name="description" content="LocalSearch delivers websites, SEO, Google Ads, Listings Management, Reviews and Reputation tools for Australian businesses. Boost leads, calls and customers with our expert solutions.">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --teal: #3d70fe;
+    --cream: #fdfcf9;
+    --orange: #fc7201;
+    --white: #ffffff;
+    --text-dark: #1f2937;
+    --max-width: 1150px;
+    --radius: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; }
+
+header {
+    background: var(--cream);
+    padding: 20px 24px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--teal);
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+nav a {
+    color: var(--teal);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.6rem;
+    color: var(--teal);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    body.menu-open { overflow: hidden; }
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100%;
+        background: var(--cream);
+        flex-direction: column;
+        padding: 80px 20px;
+        gap: 22px;
+        border-left: 1px solid #ddd;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+    nav.open { transform: translateX(0); }
+    .menu-toggle { display: block; z-index: 1000; }
+    .menu-toggle i { transition: transform 0.3s ease; }
+    .menu-toggle.open i { transform: rotate(90deg); }
+}
+
+.btn-orange {
+    background: var(--orange);
+    color: var(--white);
+    padding: 14px 34px;
+    border-radius: 40px;
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid var(--white);
+}
+
+.hero {
+    background: var(--teal);
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 28px;
+    font-size: 1.2rem;
+}
+
+.hero .cta-wrap { margin-top: 30px; }
+
+.section {
+    padding: 60px 20px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 40px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-box {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.service-box h3 {
+    color: var(--teal);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.service-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* VIDEO SECTION */
+.vertical-video-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 40px auto;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+}
+
+.vertical-video-wrap::before {
+    content: "";
+    display: block;
+    padding-top: 177.78%;
+}
+
+.vertical-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    background: var(--teal);
+    color: var(--white);
+    padding: 60px 20px;
+}
+
+.footer-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+footer h4 {
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li { margin-bottom: 8px; }
+footer a { color: var(--white); }
+.footer-social a { display: block; margin-bottom: 8px; font-size: 1rem; }
+.footer-bottom { text-align: center; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.4); padding-top: 20px; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+    <div class="logo">LocalSearch</div>
+    <div class="menu-toggle" id="menuToggle"><i class="fa fa-bars"></i></div>
+    <nav id="mobileMenu">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Pricing</a>
+        <a href="#">Contact</a>
+    </nav>
+</div>
+</header>
+
+<section class="hero">
+    <h1>LocalSearch Services for Australian Businesses</h1>
+    <p>Boost leads, calls, and customers with expert websites, SEO, ads, and reputation management designed for local success.</p>
+    <div class="cta-wrap">
+        <a href="#" class="btn-orange">Get Started</a>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+
+        <div class="service-box">
+            <h3>Websites</h3>
+            <p>Custom-built websites designed to drive traffic, attract visitors, and convert leads into customers for Australian businesses.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Listings Management</h3>
+            <p>Ensure your business details are accurate across all platforms, including Google, Siri, Alexa, and more with LocalVis.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Search Marketing</h3>
+            <p>Reach your audience at the right time using LocalAds. We optimise Google Ads for Australian businesses to generate high-quality leads.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Online Reviews</h3>
+            <p>Manage customer feedback to enhance your reputation, showcasing the quality and reliability of your services to potential clients.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>SEO</h3>
+            <p>Rank higher on Google and attract more local traffic with proven SEO strategies from LocalRank, designed for Australian businesses.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Performance Boost</h3>
+            <p>Combine Google AI with Meta Advantage+ to extend your reach across platforms, driving customer acquisition like never before.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Reputation Management</h3>
+            <p>Take control of your online presence. Ensure reviews, listings, and business info reflect your quality and credibility.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>LocalVis</h3>
+            <p>Keep business information consistent across 30+ digital platforms to make it easy for customers to find, trust, and choose your business.</p>
+        </div>
+
+    </div>
+
+    <div class="vertical-video-wrap">
+        <iframe class="vertical-video"
+                src="https://www.youtube.com/embed/M7-UXuwqq3E"
+                allowfullscreen
+                frameborder="0"></iframe>
+    </div>
+</section>
+
+<footer>
+<div class="footer-grid">
+
+    <div>
+        <h4>Contact</h4>
+        <ul>
+            <li><a href="tel:+611300753650">1300 753 650</a></li>
+            <li><a href="mailto:enquiries@localsearch.com.au">enquiries@localsearch.com.au</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-x-twitter"></i> X</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="#">www.localsearch.com.au</a>
+    </div>
+
+    <div>
+        <h4>Company</h4>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+
+</div>
+<div class="footer-bottom">
+    © LocalSearch 2025 — Empowering local businesses across Australia.
+</div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    menuToggle.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+});
+
+document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('open');
+        document.body.classList.remove('menu-open');
+    }
+});
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('open');
+        document.body.classList.remove('menu-open');
+    });
+});
+</script>
+
+</body>
+</html>
