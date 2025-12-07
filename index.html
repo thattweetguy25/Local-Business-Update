@@ -10,32 +10,36 @@
 
     <style>
         :root {
-            /* WCAG AAA Contrast is key: Text Contrast must be ≥7:1 */
-            --primary: #0B6E6E; 
-            --accent: #F97316; 
-            --light-bg: #F6F7F9; 
-            --text-primary: #1F2937; 
+            --primary: #0B6E6E;
+            --accent: #F97316;
+            --light-bg: #F6F7F9;
+            --text-primary: #1F2937;
             --white: #ffffff;
             --max-width: 1150px;
             --base-font: 16px;
             --line-height: 1.5;
         }
 
-        body {
+        /* Prevent horizontal scroll anywhere */
+        html, body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            padding: 0;
+            overflow-x: hidden; /* FIX */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             font-size: var(--base-font);
             background: var(--white);
-            color: var(--text-primary); 
+            color: var(--text-primary);
             line-height: var(--line-height);
         }
 
-        /* --- Global Structural Styles --- */
-
+        /* Header */
         header {
             background: var(--white);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: sticky; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
             top: 0;
             z-index: 1000;
         }
@@ -43,196 +47,159 @@
         .header-content {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 10px 15px; /* Slightly reduced vertical padding for tighter fit */
+            padding: 10px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px; /* FIX for tight layouts */
         }
 
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--primary);
             font-weight: bold;
             text-decoration: none;
-            flex-shrink: 0; 
+            flex-shrink: 0;
         }
 
-        /* Constrain Search Bar */
         .header-content input[type="search"] {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            max-width: 400px;
             width: 100%;
+            max-width: 400px;
             flex-grow: 1;
-            flex-shrink: 1; 
-            margin: 0 15px; 
         }
 
         .nav-cta {
             background: var(--accent);
             color: var(--white);
-            padding: 10px 15px; 
+            padding: 10px 14px;
             border-radius: 4px;
-            text-decoration: none;
             font-weight: bold;
+            text-decoration: none;
             white-space: nowrap;
-            flex-shrink: 0; 
         }
-        
-        /* ************************************** */
-        /* FIX: Hide search bar on mobile (≤600px) */
-        /* ************************************** */
+
+        /* Hide search on mobile */
         @media (max-width: 600px) {
             .header-content input[type="search"] {
-                display: none; /* Hide the search bar completely to solve overflow */
-            }
-            .nav-cta {
-                /* Ensure button fits tightly on the right */
-                margin-left: auto;
+                display: none;
             }
         }
 
+        /* Containers */
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px 16px; /* FIX: mobile spacing */
         }
 
-        /* --- Hero Section --- */
-
+        /* HERO */
         .hero {
-            background: var(--primary); 
-            padding: 80px 20px;
+            background: var(--primary);
+            padding: 70px 20px;
             text-align: center;
             color: var(--white);
         }
 
         .hero h1 {
-            margin: 0 0 15px;
-            font-size: 2.8rem;
-            line-height: 1.1;
+            font-size: clamp(1.8rem, 5vw, 2.8rem); /* FIX: scalable heading */
+            margin-bottom: 15px;
+            line-height: 1.15;
         }
 
         .hero p.subhead {
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 3.5vw, 1.3rem);
             max-width: 700px;
-            margin: 10px auto 30px;
+            margin: 0 auto 30px;
         }
 
         .hero-ctas {
             display: flex;
+            gap: 20px;
             justify-content: center;
-            gap: 20px; 
-        }
-        
-        .hero-ctas .btn {
-            margin: 0; 
+            flex-wrap: wrap;  /* FIX: allow wrapping */
         }
 
-        /* Stack Hero CTAs on mobile (≤550px) */
         @media (max-width: 550px) {
             .hero-ctas {
-                flex-direction: column; 
-                align-items: center;
+                flex-direction: column;
+                width: 100%;
             }
             .hero-ctas .btn {
-                width: 100%; 
-                max-width: 300px;
-                margin-bottom: 10px;
+                width: 100%;
+                max-width: 320px;
             }
         }
-        
+
+        /* BUTTONS */
         .btn {
             display: inline-block;
             padding: 14px 28px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            transition: background 0.2s;
         }
-        
+
         .btn.primary {
-            background: var(--accent); 
+            background: var(--accent);
             color: var(--white);
-            border: none;
         }
-        .btn.primary:hover {
-            background: #e66914; 
-        }
-        
+
         .btn.secondary {
-            background: none;
             border: 2px solid var(--white);
             color: var(--white);
+            background: transparent;
         }
 
-        .trust-badges {
-            margin-top: 30px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* --- Remaining styles (for completeness) --- */
-
+        /* Sections */
         .section {
             padding: 60px 20px;
         }
 
         .section.light {
-            background: var(--light-bg); 
+            background: var(--light-bg);
         }
 
         .section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: var(--primary);
             text-align: center;
+            font-size: clamp(1.6rem, 4vw, 2.2rem); /* FIX scaling */
+            color: var(--primary);
+            margin-bottom: 25px;
         }
 
+        /* Cards */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* FIX */
             gap: 25px;
-            margin-top: 30px;
         }
 
         .card {
             background: var(--white);
-            padding: 25px;
+            padding: 22px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             text-align: center;
         }
 
+        /* VIDEO FIX — Fully responsive */
         .video-wrapper {
-            margin: 35px auto 0;
-            max-width: 800px; 
+            max-width: 800px;
+            margin: 0 auto;
             position: relative;
         }
-        
+
         .video-wrapper::before {
             content: "";
             display: block;
-            padding-top: 56.25%; 
-        } 
-
-        .video-wrapper.portrait {
-            max-width: 400px; 
-        }
-
-        @media (max-width: 600px) {
-            .video-wrapper.portrait::before {
-                padding-top: 177.78%; 
-            }
+            padding-top: 56.25%;
         }
 
         .video-content {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             border-radius: 12px;
             overflow: hidden;
         }
@@ -242,142 +209,104 @@
             height: 100%;
             object-fit: cover;
         }
-        
+
+        @media (max-width: 600px) {
+            .video-wrapper {
+                max-width: 100%; /* FIX */
+            }
+        }
+
+        /* FOOTER */
         footer {
-            background: var(--primary); 
+            background: var(--primary);
+            color: var(--white);
             padding: 40px 20px;
-            color: var(--white);
-            font-size: 0.9rem;
         }
-        
-        footer a {
-            color: var(--white);
-            opacity: 0.8;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-        
+
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); /* FIX */
+            gap: 25px;
             max-width: var(--max-width);
             margin: 0 auto 30px;
         }
-        
-        .footer-grid h4 {
-            margin-top: 0;
-            font-size: 1.1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 10px;
-        }
-
-        .footer-grid ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-grid ul li {
-            margin-bottom: 8px;
-        }
 
         .footer-bottom {
-            max-width: var(--max-width);
-            margin: 0 auto;
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.15);
         }
 
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--accent);
-            color: var(--white);
-            padding: 8px;
-            z-index: 9999;
+        a {
+            color: inherit;
             text-decoration: none;
-        }
-        .skip-link:focus {
-            top: 0;
-            outline: 3px solid var(--accent);
-            outline-offset: 2px;
         }
     </style>
 </head>
 
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a> 
+
+<!-- ACCESSIBILITY -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header>
     <div class="header-content">
         <a href="/" class="logo">Local Search</a>
         <input type="search" placeholder="Search services or location...">
-        <a href="#contact" class="nav-cta">Client Login</a> 
+        <a href="#contact" class="nav-cta">Client Login</a>
     </div>
 </header>
 
-<main id="main-content"> 
+<main id="main-content">
+
 <section class="hero">
     <div class="container">
-        <h1 id="hero-heading">Local customers find local businesses — quickly.</h1>
+        <h1>Local customers find local businesses — quickly.</h1>
         <p class="subhead">Manage your listings, boost reviews and get more calls. Free audit in 48 hours.</p>
         
         <div class="hero-ctas">
-            <a href="#contact" class="btn primary">Get a Free Local Audit</a> 
-            <a href="#pricing" class="btn secondary">See Plans</a> 
+            <a href="#contact" class="btn primary">Get a Free Local Audit</a>
+            <a href="#pricing" class="btn secondary">See Plans</a>
         </div>
 
-        <div class="trust-badges">
-            Trusted by 700+ Australian businesses | ★★★★★ (4.8/5.0)
+        <div class="trust-badges" style="margin-top:20px; font-size:0.9rem; opacity:0.9;">
+            Trusted by 700+ Australian businesses • ★★★★★ 4.8/5.0
         </div>
     </div>
 </section>
 
 <section class="section">
-    <div class="container" style="text-align: center;">
+    <div class="container" style="text-align:center;">
         <h2>Find Local Services Instantly</h2>
-        <p>Interactive search, map and filters will go here to demonstrate local business proximity and ratings.</p>
+        <p>Interactive search, map and filters will go here.</p>
     </div>
 </section>
 
 <section class="section light">
     <div class="container">
-        <h2 style="text-align: center;">Watch: How LocalSearch drives customers — 60s</h2>
-        
-        <div class="video-wrapper"> 
+        <h2>Watch: How LocalSearch Drives Customers</h2>
+
+        <div class="video-wrapper">
             <div class="video-content">
-                <video controls muted autoplay playsinline poster="media/v1-thumb.jpg"> 
+                <video controls muted autoplay playsinline poster="media/v1-thumb.jpg">
                     <source src="vertical-video.mp4" type="video/mp4">
-                    <track label="English" kind="captions" srclang="en" src="media/v1-captions.vtt" default>
                 </video>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
-            <a href="media/v1-transcript.txt" style="color: var(--primary); text-decoration: underline;">View Full Transcript (WCAG AAA)</a>
-        </p>
     </div>
 </section>
 
 <section class="section">
     <div class="container">
-        <h2>Real Results for Real Australian Businesses</h2>
+        <h2>Real Results for Real Businesses</h2>
+
         <div class="card-grid">
-            <div class="card">
-                <h3>Case Study: Leads</h3>
-                <p>307+ leads in 30 days. Problem → Solution → Outcome format.</p>
-            </div>
-            <div class="card">
-                <h3>Testimonial: Trust</h3>
-                <p>Named customer testimonials with photos & rating stars.</p>
-            </div>
-            <div class="card">
-                <h3>Expertise</h3>
-                <p>Author card and credentials linked to resource section.</p>
-            </div>
+            <div class="card"><h3>Case Study</h3><p>307+ leads in 30 days.</p></div>
+            <div class="card"><h3>Testimonial</h3><p>Named testimonials with stars.</p></div>
+            <div class="card"><h3>Expertise</h3><p>Author credibility cards.</p></div>
         </div>
-        <div style="text-align: center; margin-top: 40px;">
+
+        <div style="text-align:center; margin-top:40px;">
             <a href="#case-studies" class="btn primary">Read More Case Studies</a>
         </div>
     </div>
@@ -385,79 +314,26 @@
 
 <section class="section light" id="contact">
     <div class="container">
-        <h2 style="color: var(--text-primary);">Speak with the Team</h2>
-        <p style="text-align: center; max-width: 600px; margin: 0 auto 30px;">Share your goals and we’ll map out a clear starting point with the right services, timelines, and structure to match your needs.</p>
-        <div style="text-align: center;">
+        <h2>Speak with the Team</h2>
+        <p style="text-align:center; max-width:600px; margin:0 auto;">Share your goals and we’ll help you get started.</p>
+        <div style="text-align:center; margin-top:20px;">
             <a href="mailto:hello@localsearch.com.au" class="btn primary">Contact Us for a Free Audit</a>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 0.8rem; color: #666;">*Short, progressive form with inline validation will be implemented here.</p>
     </div>
 </section>
+
 </main>
 
 <footer>
     <div class="footer-grid">
-        <div>
-            <h4>About Local Search</h4>
-            <ul>
-                <li><a href="/about">Who We Are</a></li>
-                <li><a href="/success">Success Stories</a></li>
-                <li><a href="/careers">Careers</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4>Services</h4>
-            <ul>
-                <li><a href="/services/seo">SEO (Search Engine Optimisation)</a></li>
-                <li><a href="/services/websites">Websites & Design</a></li>
-                <li><a href="/services/ads">Google Ads & Performance Boost</a></li>
-                <li><a href="/services/listings">Listings Management</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4>EEAT & Policies</h4>
-            <ul>
-                <li><a href="/resources/insights">Insights & Author Pages</a></li>
-                <li><a href="/policy/privacy">Privacy Policy</a></li>
-                <li><a href="/policy/reviews">Review Moderation Policy</a></li>
-                <li><a href="/policy/accessibility">Accessibility Statement (WCAG AAA)</a></li> 
-            </ul>
-        </div>
+        <div><h4>About</h4></div>
+        <div><h4>Services</h4></div>
+        <div><h4>Policies</h4></div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; Local Search. Digital Growth for Australian Businesses.</p>
-        <p style="margin-top: 10px;">
-            <a href="#social">Social Links</a> | <a href="tel:+61712345678">1300 753 650</a>
-        </p>
+        &copy; Local Search Australia
     </div>
 </footer>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "LocalSearch Australia",
-  "url": "https://business.localsearch.com.au/",
-  "logo": "https://business.localsearch.com.au/assets/logo.png",
-  "sameAs": ["https://www.facebook.com/localsearch", "https://www.linkedin.com/company/localsearch"],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Level 1, Example St",
-    "addressLocality": "Brisbane",
-    "addressRegion": "QLD",
-    "postalCode": "4000",
-    "addressCountry": "AU"
-  },
-  "telephone": "+61-7-1234-5678",
-  "priceRange": "$$",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "842"
-  }
-}
-</script>
 
 </body>
 </html>
