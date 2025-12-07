@@ -2,179 +2,263 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>LocalSearch – Digital Marketing for Australian Local Businesses</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LocalSearch | Digital Marketing for Australian Businesses</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Montserrat Font -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-    :root {
-        --teal: #3d70fe;
-        --dark: #0e1a33;
-        --cream: #f8f8f5;
-        --white: #ffffff;
-        --grey: #555;
-    }
+/* ----------------------------------------
+   RESET / BASE
+----------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-        margin: 0;
-        font-family: "Montserrat", sans-serif;
-        background: var(--cream);
-        color: var(--dark);
-    }
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fdfcf9;
+    colour: #222;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
 
-    /* HEADER */
-    header {
-        background: var(--cream);
-        padding: 18px 24px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        position: sticky;
-        top: 0;
-        z-index: 50;
-    }
+:root {
+    --cream: #fdfcf9;
+    --teal: #3d70fe;
+    --orange: #f96354;
+    --white: #fff;
+}
 
-    .logo {
-        font-size: 1.7rem;
-        font-weight: 800;
-        color: var(--teal);
-        white-space: nowrap;
-    }
+/* ----------------------------------------
+   HEADER
+----------------------------------------- */
+header {
+    background: var(--cream);
+    padding: 18px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: centre;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    colour: var(--teal);
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    align-items: centre;
+    gap: 26px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    colour: var(--teal);
+    font-size: 1rem;
+}
+
+.btn-header {
+    background: var(--orange);
+    colour: var(--white);
+    padding: 10px 22px;
+    border-radius: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* MOBILE MENU BUTTON */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    colour: var(--teal);
+}
+
+/* MOBILE NAV DROPDOWN */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: var(--cream);
+    width: 100vw;
+    border-bottom: 1px solid #ddd;
+    padding: 6px 0;
+}
+
+.mobile-nav a {
+    padding: 14px 22px;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    font-weight: 600;
+    colour: var(--teal);
+}
+
+.mobile-nav .btn-header {
+    margin: 16px auto;
+    width: auto !important;
+}
+
+/* ----------------------------------------
+   HERO SECTION
+----------------------------------------- */
+.hero {
+    background: var(--teal);
+    padding: 80px 30px;
+    text-align: centre;
+    colour: var(--white);
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    font-size: 1.2rem;
+}
+
+.btn-orange {
+    background: var(--orange);
+    colour: var(--white);
+    padding: 14px 32px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.btn-outline {
+    border: 2px solid var(--white);
+    colour: var(--white);
+    padding: 13px 32px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+}
+
+/* ----------------------------------------
+   VIDEO BLOCK (PORTRAIT 9:16)
+----------------------------------------- */
+.video-wrapper {
+    width: 100%;
+    max-width: 420px;
+    margin: 60px auto 40px;
+}
+
+.video-box {
+    background: #000;
+    aspect-ratio: 9/16;
+    width: 100%;
+    border-radius: 18px;
+    colour: var(--white);
+    display: flex;
+    align-items: centre;
+    justify-content: centre;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* ----------------------------------------
+   VALUE SECTION
+----------------------------------------- */
+.section-light {
+    background: var(--cream);
+    padding: 70px 26px;
+    text-align: centre;
+    colour: #222;
+}
+
+.section-light h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.section-light p {
+    max-width: 720px;
+    margin: 0 auto 20px;
+    font-size: 1.05rem;
+}
+
+/* ----------------------------------------
+   FOOTER
+----------------------------------------- */
+footer {
+    background: var(--teal);
+    text-align: centre;
+    padding: 40px 20px;
+    colour: var(--white);
+    font-size: 0.95rem;
+    margin-top: 50px;
+}
+
+/* ----------------------------------------
+   MOBILE
+----------------------------------------- */
+@media (max-width: 768px) {
 
     nav {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+        display: none;
     }
 
-    nav a {
-        text-decoration: none;
-        font-weight: 600;
-        color: var(--dark);
-        font-size: 1rem;
-    }
-
-    .btn-header {
-        background: var(--teal);
-        padding: 12px 26px;
-        border-radius: 40px;
-        color: var(--white);
-        font-weight: 700;
-        text-decoration: none;
-        white-space: nowrap;
-    }
-
-    /* MOBILE NAV */
-    @media (max-width: 768px) {
-        nav {
-            display: none;
-        }
-
-        .menu-toggle {
-            display: block;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--teal);
-        }
-
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            background: var(--cream);
-            width: 100%;
-            padding: 20px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .mobile-nav a {
-            padding: 12px 0;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #eee;
-        }
-    }
-
-    /* HERO */
-    .hero {
-        background: var(--teal);
-        padding: 90px 24px;
-        text-align: center;
-        color: var(--white);
+    .menu-toggle {
+        display: block;
     }
 
     .hero h1 {
-        font-size: 2.6rem;
-        font-weight: 800;
-        margin-bottom: 18px;
+        font-size: 2.2rem;
     }
 
-    .hero p {
-        font-size: 1.25rem;
-        max-width: 650px;
-        margin: 0 auto 30px;
-        line-height: 1.6;
-        color: var(--white);
+    .btn-header {
+        width: auto;
     }
+}
 
-    .cta-row {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .btn-primary {
-        background: var(--white);
-        color: var(--teal);
-        padding: 15px 34px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 700;
-    }
-
-    .btn-outline {
-        background: transparent;
-        border: 2px solid var(--white);
-        color: var(--white);
-        padding: 15px 34px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 700;
-    }
-
-    /* FOOTER */
-    footer {
-        background: var(--teal);
-        padding: 40px 24px;
-        text-align: center;
-        color: var(--white);
-        font-size: 1rem;
-        margin-top: 60px;
-    }
 </style>
 
 <script>
-    function toggleMenu() {
-        const menu = document.querySelector('.mobile-nav');
-        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-    }
+function toggleMenu() {
+    const menu = document.querySelector('.mobile-nav');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
 </script>
-</head>
 
+</head>
 <body>
 
+<!-- HEADER -->
 <header>
     <div class="logo">LocalSearch</div>
+
     <nav>
         <a href="#">Services</a>
         <a href="#">Plans</a>
         <a href="#">Support</a>
         <a href="#" class="btn-header">Get Started</a>
     </nav>
+
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </header>
 
+<!-- MOBILE NAV DROPDOWN -->
 <div class="mobile-nav">
     <a href="#">Services</a>
     <a href="#">Plans</a>
@@ -182,16 +266,36 @@
     <a href="#" class="btn-header">Get Started</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
     <h1>Marketing that Helps Local Businesses Grow</h1>
-    <p>We create websites, SEO strategies, ads and review-boosting tools for Australian businesses that want genuine results — more leads, more calls, and more customers.</p>
 
-    <div class="cta-row">
-        <a href="#" class="btn-primary">See Plans</a>
-        <a href="#" class="btn-outline">Get Your Free Local Audit</a>
-    </div>
+    <p>
+        We deliver custom websites, SEO, ads and review-boosting tools designed for Australian local businesses targeting real results — leads, calls and customers.
+    </p>
+
+    <a href="#" class="btn-orange">Get a Free Local Audit</a><br>
+    <a href="#" class="btn-outline">See Plans</a>
 </section>
 
+<!-- VIDEO PLACEHOLDER -->
+<div class="video-wrapper">
+    <div class="video-box">9:16 Video Placeholder</div>
+</div>
+
+<!-- SECTION -->
+<section class="section-light">
+    <h2>Practical Marketing That Works</h2>
+    <p>
+        Our team builds clear, reliable strategies for local operators who need measurable results, not guesswork. Every website and SEO plan is tailored to real-world behaviour across Australian suburbs, towns and cities.
+    </p>
+
+    <p>
+        This includes search-ready content, conversion-focused design, and effective advertising built on consistent data. The aim is simple — help more customers find you and make contact without confusion.
+    </p>
+</section>
+
+<!-- FOOTER -->
 <footer>
     © LocalSearch 2025 — Empowering local businesses across Australia.
 </footer>
