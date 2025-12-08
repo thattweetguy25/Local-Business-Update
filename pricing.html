@@ -4,38 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pricing — Websites, SEO & Digital Marketing Packages | LocalSearch</title>
-<meta name="description" content="Transparent pricing for websites, SEO, Google Ads, listings management and online review tools built for Australian local businesses. Speak with a LocalSearch specialist or view our service packages.">
+<title>LocalSearch Pricing — Websites, SEO, Google Ads & Digital Marketing Costs</title>
+<meta name="description" content="Clear pricing for websites, SEO, Google Ads, listings, reviews and reputation tools for Australian businesses. Find out what drives cost and what you receive.">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ----------------------------------------------
-   COLOURS & GLOBAL VARS
----------------------------------------------- */
 :root {
     --teal: #3d70fe;
     --cream: #fdfcf9;
     --orange: #fc7201;
     --white: #ffffff;
-    --dark: #1f2937;
+    --text-dark: #1f2937;
     --max-width: 1150px;
     --radius: 10px;
 }
 
-/* BASE */
 body {
     margin: 0;
     font-family: "Montserrat", sans-serif;
     background: var(--cream);
-    color: var(--dark);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
 a { text-decoration: none; }
 
-/* HEADER */
 header {
     background: var(--cream);
     padding: 20px 24px;
@@ -57,6 +52,7 @@ header {
     font-size: 1.7rem;
     font-weight: 700;
     color: var(--teal);
+    white-space: nowrap;
 }
 
 nav {
@@ -71,7 +67,6 @@ nav a {
     font-size: 1rem;
 }
 
-/* MOBILE NAV */
 .menu-toggle {
     display: none;
     font-size: 1.6rem;
@@ -80,31 +75,28 @@ nav a {
 }
 
 @media (max-width: 768px) {
+    body.menu-open { overflow: hidden; }
     nav {
         position: fixed;
-        right: -100%;
         top: 0;
+        right: 0;
         width: 70%;
         height: 100%;
         background: var(--cream);
-        display: flex;
         flex-direction: column;
-        padding: 60px 20px;
+        padding: 80px 20px;
         gap: 22px;
-        transition: 0.3s ease;
         border-left: 1px solid #ddd;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
     }
-
-    nav.open {
-        right: 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
+    nav.open { transform: translateX(0); }
+    .menu-toggle { display: block; z-index: 1000; }
+    .menu-toggle i { transition: transform 0.3s ease; }
+    .menu-toggle.open i { transform: rotate(90deg); }
 }
 
-/* BUTTONS */
 .btn-orange {
     background: var(--orange);
     color: var(--white);
@@ -112,33 +104,31 @@ nav a {
     border-radius: 40px;
     display: inline-block;
     font-weight: 700;
-    text-align: center;
+    text-align: centre;
     border: 1px solid var(--white);
-    margin-top: 15px;
 }
 
-/* HERO */
 .hero {
     background: var(--teal);
     padding: 80px 20px;
-    text-align: center;
-    color: var(--white);
+    text-align: centre;
+    colour: var(--white);
 }
 
 .hero h1 {
     font-size: 2.6rem;
     margin: 0 0 16px;
     line-height: 1.2;
+    colour: var(--white);
 }
 
 .hero p {
     max-width: 700px;
     margin: 0 auto 28px;
-    font-size: 1.15rem;
-    color: var(--white);
+    font-size: 1.2rem;
+    colour: var(--white);
 }
 
-/* SECTION WRAPPER */
 .section {
     padding: 60px 20px;
     max-width: var(--max-width);
@@ -146,102 +136,116 @@ nav a {
 }
 
 .section h2 {
-    text-align: center;
+    text-align: centre;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--teal);
+    colour: var(--teal);
+    margin-bottom: 40px;
 }
 
-      /* VIDEO SECTION — UPDATED ONLY */
-        .video-section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .vertical-video-wrap {
-            position: relative;
-            width: 100%;
-            max-width: 420px;
-            margin: 40px auto;
-            border-radius: 14px;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .vertical-video-wrap::before {
-            content: "";
-            display: block;
-            padding-top: 177.78%; /* Perfect 9:16 */
-        }
-
-        .vertical-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-/* PRICING GRID */
 .pricing-grid {
     display: grid;
-    gap: 35px;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .card {
     background: var(--white);
-    padding: 32px;
+    padding: 30px 20px;
     border-radius: var(--radius);
-    border: 1px solid #eee;
-    box-shadow: 0 3px 14px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .card h3 {
-    margin-top: 0;
-    color: var(--teal);
+    colour: var(--teal);
+    margin-bottom: 15px;
     font-size: 1.4rem;
 }
 
-/* FORM SECTION */
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* MATCHING VIDEO STYLE FROM CODE 1 */
+.vertical-video-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 40px auto;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+}
+
+.vertical-video-wrap::before {
+    content: "";
+    display: block;
+    padding-top: 177.78%;
+}
+
+.vertical-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* FORM */
 .form-section {
-    background: var(--teal);
-    color: var(--white);
-    padding: 80px 20px;
-    margin-top: 40px;
+    padding: 60px 20px;
+    background: var(--white);
+    max-width: var(--max-width);
+    margin: 0 auto 60px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.form-section h2 {
+    text-align: centre;
+    colour: var(--teal);
+    margin-bottom: 20px;
 }
 
 form {
-    max-width: 600px;
-    margin: 30px auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
 }
 
-input, select, textarea {
-    padding: 15px;
-    border-radius: 8px;
-    border: none;
+form input,
+form select,
+form textarea {
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
     font-size: 1rem;
+    width: 100%;
 }
 
-button {
+form button {
     background: var(--orange);
-    padding: 15px;
+    colour: var(--white);
+    padding: 14px;
+    border: none;
     border-radius: 40px;
-    border: 1px solid var(--white);
-    color: var(--white);
+    font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    font-size: 1.1rem;
 }
 
 /* FOOTER */
 footer {
     background: var(--teal);
-    color: var(--white);
+    colour: var(--white);
     padding: 60px 20px;
 }
 
@@ -263,14 +267,15 @@ footer h4 {
 footer ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-footer a {
-    color: var(--white);
-}
+footer ul li { margin-bottom: 8px; }
+
+footer a { colour: var(--white); }
 
 .footer-bottom {
-    text-align: center;
+    text-align: centre;
     margin-top: 40px;
     border-top: 1px solid rgba(255,255,255,0.4);
     padding-top: 20px;
@@ -278,14 +283,13 @@ footer a {
 }
 </style>
 </head>
-
 <body>
 
 <!-- HEADER -->
 <header>
 <div class="header-inner">
     <div class="logo">LocalSearch</div>
-    <i class="fa fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    <div class="menu-toggle" id="menuToggle"><i class="fa fa-bars"></i></div>
 
     <nav id="mobileMenu">
         <a href="services.html">Services</a>
@@ -311,11 +315,11 @@ footer a {
 </section>
 
 <!-- VIDEO -->
-<div class="video-block">
-    <div class="video-wrapper">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qPMFzKexDFU"
-        title="YouTube Short" frameborder="0" allowfullscreen></iframe>
-    </div>
+<div class="vertical-video-wrap">
+    <iframe class="vertical-video"
+            src="https://www.youtube.com/embed/qPMFzKexDFU"
+            allowfullscreen
+            frameborder="0"></iframe>
 </div>
 
 <!-- PRICING GRID -->
@@ -454,14 +458,10 @@ footer a {
         <ul>
             <li><a href="#">Websites</a></li>
             <li><a href="#">Google Ads</a></li>
-            <li><a href="#">Performance Boost</a></li>
             <li><a href="#">Listings Management</a></li>
-            <li><a href="#">Reputation Management</a></li>
-            <li><a href="#">Online Reviews</a></li>
-            <li><a href="#">SEO</a></li>
-            <li><a href="#">Digital Presence</a></li>
-            <li><a href="#">Google Business Profile</a></li>
-            <li><a href="#">Localsearch.com.au Advertising</a></li>
+            <li><a href="#">Reviews & Reputation</a></li>
+            <li><a href="#">Performance Boost</a></li>
+            <li><a href="#">LocalVis</a></li>
         </ul>
     </div>
 
@@ -474,9 +474,30 @@ footer a {
 </footer>
 
 <script>
-function toggleMenu() {
-    document.getElementById("mobileMenu").classList.toggle("open");
-}
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    menuToggle.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+});
+
+document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('open');
+        document.body.classList.remove('menu-open');
+    }
+});
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('open');
+        document.body.classList.remove('menu-open');
+    });
+});
 </script>
 
 </body>
