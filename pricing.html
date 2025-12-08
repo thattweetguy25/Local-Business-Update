@@ -1,256 +1,361 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing | LocalSearch</title>
-    <style>
-        :root {
-            --teal: #0A8A8A;
-            --cream: #FFF7ED;
-            --dark: #1A1A1A;
-            --light: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: var(--light);
-            color: var(--dark);
-        }
+<title>Pricing — Websites, SEO & Marketing Packages | LocalSearch</title>
+<meta name="description" content="Transparent pricing for websites, SEO, Google Ads, listings management and review tools built for Australian local businesses. View packages or speak with a LocalSearch specialist.">
 
-        header {
-            background: var(--cream);
-            border-bottom: 1px solid #ddd;
-        }
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .header-inner {
-            max-width: 1200px;
-            margin: auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+<style>
+/* ----------------------------------------------
+   COLOURS & GLOBAL VARS
+---------------------------------------------- */
+:root {
+    --teal: #3d70fe;
+    --cream: #fdfcf9;
+    --orange: #fc7201;
+    --white: #ffffff;
+    --text-dark: #1f2937;
+    --max-width: 1150px;
+    --radius: 10px;
+}
 
-        nav a {
-            margin-left: 20px;
-            font-weight: 600;
-            text-decoration: none;
-            color: var(--teal);
-        }
+/* ----------------------------------------------
+   BASE
+---------------------------------------------- */
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
 
-        /* MOBILE NAV */
-        @media (max-width: 768px) {
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                height: 100%;
-                background: var(--cream);
-                padding: 80px 20px;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                transform: translateX(100%);
-                transition: transform .3s ease;
-                z-index: 999;
-            }
+a { text-decoration: none; }
 
-            nav.open {
-                transform: translateX(0);
-                right: 0;
-            }
+/* ----------------------------------------------
+   HEADER
+---------------------------------------------- */
+header {
+    background: var(--cream);
+    padding: 20px 24px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
 
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                font-size: 1.7rem;
-                color: var(--teal);
-            }
-        }
+.header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .hero {
-            padding: 100px 20px;
-            text-align: center;
-            background: var(--cream);
-        }
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--teal);
+}
 
-        .hero h1 {
-            font-size: 2.6rem;
-            margin-bottom: 10px;
-            color: var(--teal);
-        }
+/* NAV */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.5;
-        }
+nav a {
+    color: var(--teal);
+    font-weight: 600;
+    font-size: 1rem;
+}
 
-        .pricing-grid {
-            max-width: 1200px;
-            margin: 70px auto;
-            padding: 0 20px;
-            display: grid;
-            gap: 35px;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
+/* MOBILE NAV */
+.menu-toggle {
+    display: none;
+    font-size: 1.6rem;
+    color: var(--teal);
+    cursor: pointer;
+}
 
-        .card {
-            background: var(--light);
-            border: 1px solid #eee;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
+@media (max-width: 768px) {
+    nav {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 70%;
+        height: 100%;
+        background: var(--cream);
+        display: flex;
+        flex-direction: column;
+        padding: 60px 20px;
+        gap: 22px;
+        transition: 0.3s ease;
+        border-left: 1px solid #ddd;
+    }
+    nav.open {
+        right: 0;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
 
-        .card h3 {
-            color: var(--teal);
-            margin-bottom: 12px;
-        }
+/* ----------------------------------------------
+   BUTTON
+---------------------------------------------- */
+.btn-orange {
+    background: var(--orange);
+    color: var(--white);
+    padding: 14px 34px;
+    border-radius: 40px;
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid var(--white);
+}
 
-        .card p {
-            line-height: 1.5;
-        }
+/* ----------------------------------------------
+   HERO
+---------------------------------------------- */
+.hero {
+    background: var(--teal);
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--white);
+}
 
-        .form-section {
-            background: var(--cream);
-            padding: 80px 20px;
-            margin-top: 50px;
-        }
+.hero h1 {
+    font-size: 2.6rem;
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
 
-        .form-section h2 {
-            text-align: center;
-            color: var(--teal);
-            margin-bottom: 10px;
-        }
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 28px;
+    font-size: 1.15rem;
+}
 
-        .form-section p {
-            text-align: center;
-            max-width: 600px;
-            margin: auto;
-            margin-bottom: 30px;
-        }
+/* ----------------------------------------------
+   SECTION WRAPPER
+---------------------------------------------- */
+.section {
+    padding: 60px 20px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
 
-        form {
-            max-width: 600px;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+.section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--teal);
+}
 
-        input, select, textarea {
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
+/* ----------------------------------------------
+   PRICING GRID
+---------------------------------------------- */
+.pricing-grid {
+    display: grid;
+    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-top: 40px;
+}
 
-        button {
-            padding: 17px;
-            background: var(--teal);
-            border: none;
-            border-radius: 8px;
-            colour: white;
-            font-size: 1.1rem;
-            cursor: pointer;
-            font-weight: bold;
-        }
+.card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: var(--radius);
+    border: 1px solid #eee;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.05);
+}
 
-        footer {
-            padding: 40px 20px;
-            text-align: centre;
-            font-size: 0.9rem;
-            background: #fafafa;
-            margin-top: 60px;
-        }
-    </style>
+.card h3 {
+    margin-top: 0;
+    color: var(--teal);
+    font-size: 1.4rem;
+}
+
+/* ----------------------------------------------
+   FORM SECTION
+---------------------------------------------- */
+.form-section {
+    background: var(--teal);
+    color: var(--white);
+    padding: 80px 20px;
+    margin-top: 40px;
+}
+
+.form-section h2 {
+    color: var(--white);
+}
+
+form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+input, select, textarea {
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
+
+button {
+    background: var(--orange);
+    padding: 15px;
+    border-radius: 40px;
+    border: 1px solid var(--white);
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* ----------------------------------------------
+   FOOTER
+---------------------------------------------- */
+footer {
+    background: var(--teal);
+    color: var(--white);
+    padding: 60px 20px;
+}
+
+.footer-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+footer h4 {
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer a {
+    color: var(--white);
+}
+
+.footer-social a {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.4);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    <div class="header-inner">
-        <div class="logo">LocalSearch</div>
+<div class="header-inner">
+    <div class="logo">LocalSearch</div>
+    <i class="fa fa-bars menu-toggle" onclick="toggleMenu()"></i>
 
-        <div class="menu-toggle" id="menuToggle">
-            <i class="fa fa-bars"></i>
-        </div>
-
-        <nav id="mobileMenu">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </div>
+    <nav id="mobileMenu">
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#">Support</a>
+        <a href="#">Contact</a>
+    </nav>
+</div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
     <h1>Pricing Made Clear</h1>
-    <p>Every business deserves a website and marketing plan that performs. Our pricing is structured to give you value, transparency, and the results you need to grow.</p>
+    <p>Plans built for real-world results — more calls, more leads and stronger visibility for Australian local businesses.</p>
 </section>
 
-<!-- INTRO TEXT (SEO + EEAT) -->
-<section class="pricing-intro" style="max-width:800px;margin:60px auto;padding:0 20px;">
-    <p>
-        Website pricing depends on size, features, content needs, and your business goals. LocalSearch builds custom sites that load fast, rank well, and convert more visitors into enquiries. Every build includes smart on-page SEO, a mobile-first layout, and design tailored to your brand.
+<!-- INTRO -->
+<section class="section">
+    <h2>What Affects Your Pricing?</h2>
+    <p style="max-width:800px;margin:20px auto 0;text-align:center;">
+        Website and marketing pricing varies depending on features, content needs, and your goals. Every LocalSearch build includes mobile-first design, on-page SEO foundations, and a structure that converts visitors into customers.
     </p>
 </section>
 
 <!-- PRICING GRID -->
-<section class="pricing-grid">
+<section class="section">
+<div class="pricing-grid">
 
     <div class="card">
         <h3>Websites</h3>
-        <p>Custom designs built for Australian businesses, optimised for speed, SEO, and conversions. Built to help you book more jobs and capture more enquiries.</p>
+        <p>Custom builds designed for speed, visibility and conversions. Every website includes SEO-ready structure and mobile-first design.</p>
     </div>
 
     <div class="card">
         <h3>Listings Management</h3>
-        <p>Keep your business details accurate everywhere customers search, including major directories and voice assistants such as Siri, Alexa, and Google.</p>
+        <p>Accurate business details across high-traffic directories, GPS systems and voice assistants such as Siri, Google and Alexa.</p>
     </div>
 
     <div class="card">
-        <h3>Search Marketing</h3>
-        <p>Target customers ready to buy with Google Ads built for local companies, including smart bid strategies and ongoing performance improvements.</p>
+        <h3>Google Ads</h3>
+        <p>Local campaigns tailored for high-intent buyers. Includes smart bid strategies and ongoing optimisation for better conversions.</p>
     </div>
 
     <div class="card">
         <h3>Online Reviews</h3>
-        <p>Strengthen trust with better review management, structured feedback, and improved visibility across platforms.</p>
+        <p>Strengthen trust and visibility with streamlined review generation and customer feedback tools.</p>
     </div>
 
     <div class="card">
         <h3>SEO</h3>
-        <p>Rank higher and reach more customers with a proven SEO framework that supports long-term visibility and reliable traffic growth.</p>
+        <p>Grow long-term traffic with structured SEO campaigns built on technical accuracy, content relevance and measurable results.</p>
     </div>
 
     <div class="card">
         <h3>Performance Boost</h3>
-        <p>Australia’s first dual-platform solution combining Google’s AI with Meta Advantage+ to expand your reach and increase conversions.</p>
+        <p>Dual-platform solution combining Google’s AI with Meta Advantage+ for stronger reach and conversions.</p>
     </div>
 
     <div class="card">
         <h3>Reputation Management</h3>
-        <p>Protect your brand, keep your details accurate, and maintain a trusted presence across Australia’s most used platforms.</p>
+        <p>Protect your brand with accurate listings, proactive monitoring and consistent digital presence.</p>
     </div>
 
     <div class="card">
         <h3>LocalVis</h3>
-        <p>Consistent visibility across more than 30 key digital platforms, helping customers find and choose your business without friction.</p>
+        <p>Visibility across more than 30 essential digital platforms, helping customers choose your business sooner.</p>
     </div>
 
+</div>
 </section>
 
-<!-- ENQUIRY FORM -->
+<!-- FORM -->
 <section class="form-section">
     <h2>Talk to a Specialist</h2>
-    <p>Tell us what you need and our team will contact you with pricing, recommendations, and the best plan for your business.</p>
+    <p style="max-width:700px;margin:0 auto 30px;text-align:center;">
+        Share what you’re looking for and our team will recommend the best plan and pricing for your goals.
+    </p>
 
     <form>
         <input type="text" placeholder="Full Name" required>
@@ -260,12 +365,11 @@
         <select required>
             <option value="">Select a Service</option>
             <option>Websites</option>
-            <option>Listings Management</option>
-            <option>Search Marketing</option>
-            <option>Online Reviews</option>
             <option>SEO</option>
+            <option>Google Ads</option>
+            <option>Listings Management</option>
+            <option>Reviews & Reputation</option>
             <option>Performance Boost</option>
-            <option>Reputation Management</option>
             <option>LocalVis</option>
         </select>
 
@@ -275,24 +379,82 @@
     </form>
 </section>
 
+<!-- FOOTER -->
 <footer>
-    &copy; 2025 LocalSearch. All rights reserved.
+
+<div class="footer-grid">
+
+    <div>
+        <h4>Our Digital Marketing</h4>
+        <ul>
+            <li><a href="#">Talk to a Specialist</a></li>
+            <li><a href="#">Add a Business</a></li>
+            <li><a href="tel:+611300753650">1300 753 650</a></li>
+            <li><a href="mailto:enquiries@localsearch.com.au">enquiries@localsearch.com.au</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-x-twitter"></i> X</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="#">www.localsearch.com.au</a>
+    </div>
+
+    <div>
+        <h4>Company</h4>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Localsearch in the Media</a></li>
+            <li><a href="#">Our Locations</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h4>Resources</h4>
+        <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Knowledge Base</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Localsearch Widget Centre</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h4>What We Do</h4>
+        <ul>
+            <li><a href="#">Websites</a></li>
+            <li><a href="#">Google Ads</a></li>
+            <li><a href="#">Performance Boost</a></li>
+            <li><a href="#">Listings Management</a></li>
+            <li><a href="#">Reputation Management</a></li>
+            <li><a href="#">Online Reviews</a></li>
+            <li><a href="#">SEO</a></li>
+            <li><a href="#">Digital Presence</a></li>
+            <li><a href="#">Google Business Profile</a></li>
+            <li><a href="#">Localsearch.com.au Advertising</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="footer-bottom">
+    © LocalSearch 2025 — Empowering local businesses across Australia.
+</div>
+
 </footer>
 
 <script>
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-
-menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-});
-
-document.addEventListener('click', (e) => {
-    if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-        mobileMenu.classList.remove('open');
-    }
-});
+function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("open");
+}
 </script>
 
 </body>
-</html>
+            </html>
