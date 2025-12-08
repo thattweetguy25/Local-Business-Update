@@ -94,11 +94,9 @@ nav a {
         transition: 0.3s ease;
         border-left: 1px solid #ddd;
     }
-
     nav.open {
         right: 0;
     }
-
     .menu-toggle {
         display: block;
     }
@@ -112,7 +110,7 @@ nav a {
     border-radius: 40px;
     display: inline-block;
     font-weight: 700;
-    text-align: center;
+    text-align: centre;
     border: 1px solid var(--white);
     margin-top: 15px;
 }
@@ -135,7 +133,6 @@ nav a {
     max-width: 700px;
     margin: 0 auto 28px;
     font-size: 1.15rem;
-    color: var(--white);
 }
 
 /* SECTION WRAPPER */
@@ -152,7 +149,9 @@ nav a {
     color: var(--teal);
 }
 
-/* VIDEO SECTION */
+/* ----------------------------------------------
+   UPDATED VIDEO SECTION (MATCHES CODE 1)
+---------------------------------------------- */
 .vertical-video-wrap {
     position: relative;
     width: 100%;
@@ -276,196 +275,80 @@ footer a {
 
 <body>
 
-<!-- HEADER -->
 <header>
 <div class="header-inner">
     <div class="logo">LocalSearch</div>
     <i class="fa fa-bars menu-toggle" onclick="toggleMenu()"></i>
 
     <nav id="mobileMenu">
+        <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="pricing.html">Pricing</a>
-        <a href="#">Support</a>
         <a href="#">Contact</a>
     </nav>
 </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-    <h1>Pricing Made Clear</h1>
-    <p>We deliver custom websites, SEO, ads and review-boosting tools designed for Australian local businesses targeting real results — leads, calls and customers.</p>
+    <h1>Our Pricing</h1>
+    <p>Simple, transparent packages designed to help Australian businesses grow online.</p>
 </section>
 
-<!-- INTRO -->
 <section class="section">
-    <h2>What Affects Your Pricing?</h2>
-    <p style="max-width:800px;margin:20px auto 0;text-align:center;">
-        Pricing depends on the scope, content requirements and goals of your website or marketing plan. Every LocalSearch project includes mobile-first design, SEO-optimised foundations and a customer-driven layout that converts.
-    </p>
+    <h2>Promo Video</h2>
+
+    <div class="vertical-video-wrap">
+        <iframe class="vertical-video"
+                src="https://www.youtube.com/embed/M7-UXuwqq3E"
+                frameborder="0"
+                allowfullscreen></iframe>
+    </div>
+
+    <div class="pricing-grid">
+        <!-- CARD EXAMPLES -->
+        <div class="card"><h3>Websites</h3><p>From $49/week</p></div>
+        <div class="card"><h3>SEO</h3><p>From $299/month</p></div>
+        <div class="card"><h3>Google Ads</h3><p>Custom budgets</p></div>
+    </div>
 </section>
 
-<!-- VIDEO -->
-<div class="vertical-video-wrap">
-    <iframe class="vertical-video"
-            src="https://www.youtube.com/embed/qPMFzKexDFU"
-            allowfullscreen
-            frameborder="0"></iframe>
-</div>
-
-<!-- PRICING GRID -->
-<section class="section">
-<div class="pricing-grid">
-
-    <div class="card">
-        <h3>Websites</h3>
-        <p>Custom sites built for speed, visibility and conversions with mobile-first layouts and SEO-ready structure.</p>
-        <a class="btn-orange" href="#">Learn More</a>
-    </div>
-
-    <div class="card">
-        <h3>Listings Management</h3>
-        <p>Accurate business data across essential directories, GPS networks and voice assistants.</p>
-        <a class="btn-orange" href="#">Learn More</a>
-    </div>
-
-    <div class="card">
-        <h3>Google Ads</h3>
-        <p>Campaigns designed for local intent with smart bidding and continual optimisation.</p>
-        <a class="btn-orange" href="#">Learn More</a>
-    </div>
-
-    <div class="card">
-        <h3>Online Reviews</h3>
-        <p>Tools that build trust and help your business stand out through customer engagement.</p>
-        <a class="btn-orange" href="#">Learn More</a>
-    </div>
-
-    <div class="card">
-        <h3>SEO</h3>
-        <p>Content, technical and authority SEO tailored for long-term growth and measurable visibility.</p>
-        <a class="btn-orange" href="#">Learn More</a>
-    </div>
-
-    <div class="card">
-        <h3>Performance Boost</h3>
-        <p>A Meta + Google hybrid package built to amplify reach and conversions.</p>
-        <a class="btn-orange" href="#">Learn More</a>
-    </div>
-
-    <div class="card">
-        <h3>Reputation Management</h3>
-        <p>Protect your brand with listings accuracy, monitoring tools and ongoing digital consistency.</p>
-        <a class="btn-orange" href="#">Learn More</a>
-    </div>
-
-    <div class="card">
-        <h3>LocalVis</h3>
-        <p>Your business visible across 30+ platforms to reach more local customers faster.</p>
-        <a class="btn-orange" href="#">Learn More</a>
-    </div>
-
-</div>
-</section>
-
-<!-- FORM -->
 <section class="form-section">
-    <h2>Talk to a Specialist</h2>
-    <p style="max-width:700px;margin:0 auto 30px;text-align:center;">
-        Tell us your goals and we’ll recommend the right package for your business.
-    </p>
-
+    <h2>Request a Custom Quote</h2>
     <form>
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="tel" placeholder="Phone Number" required>
-
-        <select required>
-            <option value="">Select a Service</option>
-            <option>Websites</option>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Email">
+        <select>
+            <option>Website Packages</option>
             <option>SEO</option>
             <option>Google Ads</option>
-            <option>Listings Management</option>
-            <option>Reviews & Reputation</option>
-            <option>Performance Boost</option>
-            <option>LocalVis</option>
         </select>
-
         <textarea rows="5" placeholder="Tell us about your business"></textarea>
-
-        <button type="submit">Send Enquiry</button>
+        <button>Submit</button>
     </form>
 </section>
 
-<!-- FOOTER -->
 <footer>
-
 <div class="footer-grid">
-
     <div>
-        <h4>Our Digital Marketing</h4>
+        <h4>Contact</h4>
         <ul>
-            <li><a href="#">Talk to a Specialist</a></li>
-            <li><a href="#">Add a Business</a></li>
             <li><a href="tel:+611300753650">1300 753 650</a></li>
             <li><a href="mailto:enquiries@localsearch.com.au">enquiries@localsearch.com.au</a></li>
         </ul>
     </div>
-
-    <div class="footer-social">
-        <h4>Follow Us</h4>
-        <a href="#"><i class="fab fa-x-twitter"></i> Follow Us on X</a>
-        <a href="#"><i class="fab fa-instagram"></i> Follow Us on Instagram</a>
-        <a href="#"><i class="fab fa-linkedin"></i> Find Us on LinkedIn</a>
-        <a href="#"><i class="fab fa-facebook"></i> Find Us on Facebook</a>
-        <a href="#"><i class="fab fa-youtube"></i> Subscribe on YouTube</a>
-        <a href="#">www.localsearch.com.au</a>
-    </div>
-
     <div>
         <h4>Company</h4>
         <ul>
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Success Stories</a></li>
             <li><a href="#">Careers</a></li>
-            <li><a href="#">Localsearch in the Media</a></li>
-            <li><a href="#">Our Locations</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </div>
-
-    <div>
-        <h4>Resources</h4>
-        <ul>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Knowledge Base</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Localsearch Widget Centre</a></li>
-        </ul>
-    </div>
-
-    <div>
-        <h4>What We Do</h4>
-        <ul>
-            <li><a href="#">Websites</a></li>
-            <li><a href="#">Google Ads</a></li>
-            <li><a href="#">Performance Boost</a></li>
-            <li><a href="#">Listings Management</a></li>
-            <li><a href="#">Reputation Management</a></li>
-            <li><a href="#">Online Reviews</a></li>
-            <li><a href="#">SEO</a></li>
-            <li><a href="#">Digital Presence</a></li>
-            <li><a href="#">Google Business Profile</a></li>
-            <li><a href="#">Localsearch.com.au Advertising</a></li>
-        </ul>
-    </div>
-
 </div>
 
 <div class="footer-bottom">
     © LocalSearch 2025 — Empowering local businesses across Australia.
 </div>
-
 </footer>
 
 <script>
